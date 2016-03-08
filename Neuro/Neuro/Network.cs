@@ -32,7 +32,7 @@ namespace Neuro
             for (int i = 0; i < Neurons.GetLength(0); i++)
                 a += Neurons[i].Weight * Data[i % Data.GetLength(0), i / Data.GetLength(0)];
             return a;
-        }
+        }//-9 -15 -13 -12 -14 -14 
         public void Teach(bool tCorrect)
         {
             if(tCorrect)
@@ -60,7 +60,7 @@ namespace Neuro
             }
             SW.Close();
             FS.Close();
-            ImageSerializer.DrawFive(Neurons);
+            //ImageSerializer.DrawFive(Neurons);
         }
         public void ReadFromFile(string fileName)
         {
