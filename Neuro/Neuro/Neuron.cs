@@ -11,15 +11,20 @@ namespace Neuro
         Neuron Prev;
         Neuron[] Next;
         double SignalSum = 0;
-        double Weight;
-        public Neuron(Neuron tPrev, params Neuron[] tNext)
+        public double Weight { get; set; }
+        public Neuron(Neuron tPrev, Neuron[] tNext, double tWeight = 1)
         {
             Prev = tPrev;
             Next = tNext;
         }
-        public Neuron(params Neuron[] tNext)
+        public Neuron(Neuron[] tNext, double tWeight = 1)
         {
             Next = tNext;
         }
+        public Neuron()
+        {
+            Weight = 0;
+        }
+
     }
 }
