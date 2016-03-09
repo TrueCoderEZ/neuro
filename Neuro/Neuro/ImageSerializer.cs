@@ -20,7 +20,7 @@ namespace Neuro
             return output;
         }
 
-        public static void DrawFive(Neuron[] nn)
+        public static void DrawFive(Neuron[] nn, string name)
         {
             int min = 100000;
             int max = -100000;
@@ -37,7 +37,7 @@ namespace Neuro
                 Color tmp = Color.FromArgb((byte)(((float)(nn[i].Weight - min) / (max - min)) * 255), (byte)(((float)(nn[i].Weight - min) / (max - min)) * 255), (byte)(((float)(nn[i].Weight - min) / (max - min)) * 255));
                 im.SetPixel(i % 30, i / 30, tmp);
             }
-            im.Save("FiveImage.bmp");
+            im.Save(name + ".bmp");
             im.Dispose();
         }
     }
